@@ -1,10 +1,5 @@
 <?php
 
-// $host = 'mysql';
-// $user = 'root';
-// $pass = 'root';
-// $db_name = 'blog';
-
 $host = getenv('DB_HOST');
 $user = getenv('DB_USER');
 $pass = getenv('DB_PASSWORD');

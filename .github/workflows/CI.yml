@@ -1,4 +1,48 @@
-# name: CI
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  create-picture-docker-hub:
+    name: build
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get version
+        run: |
+          echo "VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: false
+          tags: ${{ secrets.DOCKER_USER_NAME }}/poleit:${{ env.VERSION }}
+      - name: login docker
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USER_NAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      - name: build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USER_NAME }}/poleit:${{ env.VERSION }}
+            ${{ secrets.DOCKER_USER_NAME }}/poleit:latest
+
+
+
+            # name: CI
 
 # on:
 #   push:
@@ -43,45 +87,3 @@
 #           file: ./Dockerfile
 #           push: true
 #           tags: ${{ secrets.DOCKER_USER_NAME }}/poleit:${{ steps.increment_version.outputs.VERSION }}
-
-name: CI
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
-
-jobs:
-  create-picture-docker-hub:
-    name: build
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Get version
-        run: |
-          echo "VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-
-      - name: build Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: false
-          tags: ${{ secrets.DOCKER_USER_NAME }}/poleit:${{ env.VERSION }}
-      - name: login docker
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USER_NAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
-      - name: build Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: |
-            ${{ secrets.DOCKER_USER_NAME }}/poleit:${{ env.VERSION }}
-            ${{ secrets.DOCKER_USER_NAME }}/poleit:latest

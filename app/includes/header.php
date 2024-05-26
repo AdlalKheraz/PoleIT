@@ -1,6 +1,11 @@
 <header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+
     <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
       <h1 class="logo-text"><span>Pole</span>IT</h1>
+      
     </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav">

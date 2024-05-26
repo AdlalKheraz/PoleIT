@@ -1,5 +1,5 @@
 header {
-  background: #01474a;
+  background: #234a57;
 }
 
 .admin-wrapper {
@@ -9,8 +9,11 @@ header {
 
 .admin-wrapper .left-sidebar {
   flex: 2;
-  height: 100%;
-  background: #234a57;
+
+  background-image: url(../../ressources/adminpanel.jpg);
+  background-size: cover;
+  border: 2px solid red;
+ color: burlywood;
 }
 
 .admin-wrapper .left-sidebar ul {

@@ -10,10 +10,12 @@ $posts = getPublishedPosts();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 
   <title>PoleIT de Valenciennes</title>
 </head>
@@ -26,7 +28,7 @@ $posts = getPublishedPosts();
     <!-- Accueil -->
     
     <div class="accueil" id="home">
-        <img src="ressources/POLE-IT.png" alt="logo pole it" class="logo-pole-it">
+    
         <h1>Découvrez le PoleIT de Valenciennes</h1>
 
         <a href="#activite" class="btn-accueil">En savoir plus</a>
@@ -56,7 +58,7 @@ $posts = getPublishedPosts();
                 <button>En savoir plus</button>
             </div>
         </div>
-        <img src="ressources/planetarium.jpg" alt="spherique-du-planetarium" class="img-grid img-grid-2">
+        <img src="ressources/planete.jpg" alt="spherique-du-planetarium" class="img-grid img-grid-2">
 
         <div class="bloc bloc-left bloc-3">
             <div class="bloc-txt-left">

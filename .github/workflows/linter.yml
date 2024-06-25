@@ -1,0 +1,43 @@
+name: php CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test-php:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "7.4"
+          coverage: none
+          tools: composer
+
+      - name: Install PHP_CodeSniffer
+        run: |
+          composer global require "squizlabs/php_codesniffer=*"
+          echo "$(composer global config home)/vendor/bin" >> $GITHUB_PATH
+
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          php_codesniffer: true
+
+      - name: Install Composer dependencies
+        run: |
+         composer install --no-progress --no-interaction
+         composer require --dev squizlabs/php_codesniffer
+
+      - name: Run PHP_CodeSniffer
+        run: ./vendor/bin/phpcs --report-summary --colors .

@@ -12,7 +12,7 @@
 
       <?php if (isset($_SESSION['id'])) { ?>
         <li>
-              <a href="<?php echo BASE_URL . '/espace_membre' ?>">Blog</a>
+              <a href="<?php echo BASE_URL . '/espace_membre.php' ?>">Blog</a>
             </li>
             <li>
           <a href="#">

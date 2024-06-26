@@ -27,7 +27,7 @@ h4,
 h5,
 h6 {
   font-family: "Candal", serif;
-  color: #5c5b5b;
+  color:burlywood;
   margin: 5px;
 }
 
@@ -99,7 +99,9 @@ a {
 
 header {
   background: linear-gradient(to bottom, #333, #626262);
-  height: 66px;
+  height: 75px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 header * {
@@ -171,11 +173,18 @@ header ul li a {
   text-decoration: none;
 }
 
-header ul li a:hover {
-  background: #006669;
-  transition: 0.5s;
+#nav a::after {
+    content:'';
+    width:0%;
+    height: 3px;
+    background-color: burlywood;
+    display: block;
+    transition: 0.9s;
 }
-
+ #nav a:hover::after{
+    
+  width: 60%;
+}
 header .menu-toggle {
   display: none;
 }
@@ -548,7 +557,7 @@ header .menu-toggle {
   width: 100%;
   height: 100vh;
   min-height: 970px;
-  background-image: url(../../ressources/galaxy.jpg);
+  background-image: url(../../ressources/accueil-earth.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -568,6 +577,7 @@ header .menu-toggle {
   color: #f1f1f1;
   margin-top: 10px;
   font-family: Merienda one, sans-serif;
+  margin: 120px;
 }
 .sous-titre {
   text-align: center;

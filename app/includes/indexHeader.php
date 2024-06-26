@@ -3,7 +3,7 @@
       <h1 class="logo-text"><span>Pole</span>IT</h1>
     </a>
     <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav">
+    <ul class="nav" id="nav">
                       <li><a href="#home">Accueil</a></li>
                       <li><a href="#activite">Activite</a></li>
                       <li><a href="#qsn">A propos</a></li>
@@ -37,7 +37,7 @@
         </li>
         </li>
         <?php } else { ?>
-            <li ><a href="<?php echo BASE_URL . '/login.php' ?>">connexion</a></li>
+            <li ><a href="<?php echo BASE_URL . '/login.php' ?>">Connexion</a></li>
         <?php } ?>
     </ul>
 </header>

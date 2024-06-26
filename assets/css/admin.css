@@ -1,6 +1,4 @@
-header {
-  background: #01474a;
-}
+
 
 .admin-wrapper {
   display: flex;
@@ -11,6 +9,8 @@ header {
   flex: 2;
   height: 100%;
   background: #234a57;
+  background-image: url(../../ressources/arriere.jpg);
+  background-size: cover;
 }
 
 .admin-wrapper .left-sidebar ul {

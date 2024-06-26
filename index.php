@@ -26,7 +26,7 @@ $posts = getPublishedPosts();
     <!-- Accueil -->
     
     <div class="accueil" id="home">
-        <img src="ressources/POLE-IT.png" alt="logo pole it" class="logo-pole-it">
+      
         <h1>Découvrez le PoleIT de Valenciennes</h1>
 
         <a href="#activite" class="btn-accueil">En savoir plus</a>

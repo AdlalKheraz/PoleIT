@@ -95,7 +95,7 @@ if (isset($_GET['t_id'])) {
       <div class="sidebar">
 
         <div class="section search">
-          <form action="index.php" method="post">
+          <form action="espace_membre.php" method="post">
             <input type="text" name="search-term" class="text-input" placeholder="Recherche...">
           </form>
         </div>
@@ -105,7 +105,7 @@ if (isset($_GET['t_id'])) {
           <h2 class="section-title">Topics</h2>
           <ul>
             <?php foreach ($topics as $key => $topic): ?>
-              <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
+              <li><a href="<?php echo BASE_URL . '/espace_membre.php?t_id=' . $topic['id'] . '&name=' . $topic['name'] ?>"><?php echo $topic['name']; ?></a></li>
             <?php endforeach; ?>
           </ul>
         </div>
